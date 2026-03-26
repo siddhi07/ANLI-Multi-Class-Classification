@@ -1,0 +1,11 @@
+{
+    "baseline_test_accuracy": 0.35,
+    "baseline_test_macro_f1": 0.3345523984458107,
+    "roberta_test_accuracy": 0.406,
+    "roberta_test_macro_f1": 0.3861111752615413,
+    "model_name": "roberta-base",
+    "max_length": 128,
+    "batch_size": 16,
+    "epochs": 3,
+    "learning_rate": 2e-05
+}
