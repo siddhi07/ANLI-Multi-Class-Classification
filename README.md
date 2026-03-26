@@ -169,14 +169,3 @@ The project is structured for reproducibility through:
 ├── Dockerfile
 ├── models/
 └── outputs/
-
-## Project Structure
-
-```text
-.
-├── notebook.ipynb
-├── README.md
-├── requirements.txt
-├── Dockerfile
-├── models/
-└── outputs/
