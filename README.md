@@ -108,6 +108,8 @@ Macro F1 is used to ensure balanced evaluation across all classes.
 | DistilRoBERTa                | 0.455    | 0.450    |
 | RoBERTa                      | 0.476    | 0.472    |
 
+Best model: RoBERTa achieved the highest test performance with 0.476 accuracy and 0.472 macro F1.
+
 ---
 
 ## Results Interpretation
@@ -163,9 +165,13 @@ The project is structured for reproducibility through:
 
 ```text
 .
-├── notebook.ipynb
 ├── README.md
 ├── requirements.txt
 ├── Dockerfile
+├── notebooks/
+│   └── Three_Way_Classification_ANLI.ipynb
 ├── models/
-└── outputs/
+│   └── anli_r2_roberta/
+├── outputs/
+│   └── plots/
+
