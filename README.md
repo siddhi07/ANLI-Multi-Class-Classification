@@ -1,4 +1,4 @@
-# ANLI Multi-Class Classification (Round 2)
+# ANLI Multi-Class Classification
 
 ## Overview
 
