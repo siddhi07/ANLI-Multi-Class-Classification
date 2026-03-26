@@ -87,5 +87,35 @@ Experiments with different sequence lengths:
 - `160` and `256` → no improvement  
 
 Final choice:
-```python
 MAX_LENGTH = 128
+
+---
+
+## Hyperparameter Insights
+
+### Sequence Length
+- Most samples fall within 100 words  
+- `max_length = 128` captures sufficient information  
+- Increasing to 160 or 256 did not improve performance  
+
+### Learning Rate
+- `2e-5` consistently outperformed `1.5e-5`  
+- Higher learning rate enabled better convergence within limited epochs  
+
+### Training Epochs
+- Performance improved from 1 → 3 epochs  
+- Gains beyond this were modest relative to computation cost  
+
+---
+
+## Error Analysis
+
+- Most confusion occurs between **neutral and contradiction**  
+- Errors often involve implicit reasoning or ambiguous phrasing  
+- Entailment cases are easier due to more explicit relationships  
+
+This highlights the difficulty of reasoning-based classification in adversarial datasets.
+
+---
+
+
