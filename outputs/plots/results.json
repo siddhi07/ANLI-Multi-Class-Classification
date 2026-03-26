@@ -1,8 +1,8 @@
 {
     "baseline_test_accuracy": 0.349,
     "baseline_test_macro_f1": 0.3331033508873446,
-    "distilroberta_test_accuracy": 0.448,
-    "distilroberta_test_macro_f1": 0.4439806768475372,
+    "distilroberta_test_accuracy": 0.455,
+    "distilroberta_test_macro_f1": 0.45033623188883753,
     "roberta_test_accuracy": 0.476,
     "roberta_test_macro_f1": 0.47181633487686225,
     "model_name": "roberta-base",
