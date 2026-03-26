@@ -105,7 +105,7 @@ Macro F1 is used to ensure balanced evaluation across all classes.
 | Model                         | Accuracy | Macro F1 |
 |------------------------------|----------|----------|
 | TF-IDF + Logistic Regression | 0.349    | 0.333    |
-| DistilRoBERTa                | 0.448    | 0.444    |
+| DistilRoBERTa                | 0.455    | 0.450    |
 | RoBERTa                      | 0.476    | 0.472    |
 
 ---
