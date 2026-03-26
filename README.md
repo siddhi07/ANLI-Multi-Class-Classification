@@ -161,6 +161,9 @@ The project is structured for reproducibility through:
 
 ---
 
+Model weights are tracked using Git LFS due to size constraints.  
+
+
 ## Project Structure
 
 ```text
