@@ -1,5 +1,9 @@
+from fastapi import FastAPI
+from pydantic import BaseModel
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch
+
+app = FastAPI()
 
 MODEL_PATH = "models/anli_r2_roberta"
 
@@ -9,14 +13,24 @@ label_map = {
     2: "contradiction"
 }
 
+# Load model once at startup
 tokenizer = AutoTokenizer.from_pretrained(MODEL_PATH)
 model = AutoModelForSequenceClassification.from_pretrained(MODEL_PATH)
 model.eval()
 
-def predict(premise: str, hypothesis: str) -> str:
+class InputData(BaseModel):
+    premise: str
+    hypothesis: str
+
+@app.get("/")
+def home():
+    return {"message": "ANLI NLI Model API is running"}
+
+@app.post("/predict")
+def predict(data: InputData):
     inputs = tokenizer(
-        premise,
-        hypothesis,
+        data.premise,
+        data.hypothesis,
         return_tensors="pt",
         truncation=True,
         padding=True,
@@ -27,13 +41,4 @@ def predict(premise: str, hypothesis: str) -> str:
         outputs = model(**inputs)
         pred = torch.argmax(outputs.logits, dim=1).item()
 
-    return label_map[pred]
-
-if __name__ == "__main__":
-    premise = "A man is speaking into a microphone."
-    hypothesis = "A person is giving a speech."
-    prediction = predict(premise, hypothesis)
-
-    print("Premise:", premise)
-    print("Hypothesis:", hypothesis)
-    print("Prediction:", prediction)
+    return {"prediction": label_map[pred]}
